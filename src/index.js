@@ -8,10 +8,11 @@ const searchBox = document.querySelector('#search-form');
 const search = document.querySelector('input[name="searchQuery"]');
 const button = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery');
-let inputValue = search.value;
 
 let perPage = 40;
 let page = 1;
+let inputValue = search.value;
+button.style.display = 'none';
 
 const lightbox = () =>
   new SimpleLightbox('.gallery a', {
@@ -19,8 +20,6 @@ const lightbox = () =>
     captionsData: 'alt',
     captionDelay: '250',
   });
-
-button.style.display = 'none';
 
 const fetchImages = async (searching, page) => {
   try {
